@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        shiningpanda.PythonInstallation 'Python3'  // Name you provided in Global Tool Configuration
+        python  'Python3'  // Name you provided in Global Tool Configuration
     }
 
     stages {
