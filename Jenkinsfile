@@ -1,8 +1,10 @@
 pipeline {
     agent any
-     tools {
+
+    tools {
         python 'Python3'  // Name you provided in Global Tool Configuration
     }
+
     stages {
         stage('Clone Repository') {
             steps {
@@ -36,11 +38,9 @@ pipeline {
     }
 
     post {
-        success {
-            echo 'Pipeline executed successfully!'
-        }
-        failure {
-            echo 'Pipeline failed!'
+        always {
+            echo 'Cleaning up...'
+            sh 'docker system prune -f'
         }
     }
 }
