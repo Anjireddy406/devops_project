@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+     tools {
+        python 'Python3'  // Name you provided in Global Tool Configuration
+    }
     stages {
         stage('Clone Repository') {
             steps {
